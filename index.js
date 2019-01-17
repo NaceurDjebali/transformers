@@ -12,14 +12,19 @@ function getUserNamesByIds(ids, users){
     // Output
     // ['Semih']
 
-    return ids
-        .filter(id => users.find(user => user.id === id) !== undefined)
-        .map(id => users.find(user => user.id === id).name)
+    // return ids
+    //     .filter(id => users.find(user => user.id === id) !== undefined)
+    //     .map(id => users.find(user => user.id === id).name)
+
+    return users
+        .filter(user => ids.includes(user.id))
+        .map(user => user.name)
 }
 
 function getExperiencedUserNamesByIds(ids, users, olderThanAge){
-    // your code here
-    return []
+    return users
+        .filter(user => ids.includes(user.id) && user.age > olderThanAge)
+        .map(user => user.name)
 }
 
 module.exports.getUserNamesByIds = getUserNamesByIds

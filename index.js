@@ -8,20 +8,13 @@ function getUserNamesByIds(ids, users){
     // Check users array if there user with this id
     // [1]
 
-    const userNames = ids.filter(id => {
-        // return true or false
-        return users.find(user => user.id === id) !== undefined
-    }).map(id => {
-        const user = users.find(user => user.id === id)
-        return user.name
-    })
-
-    
-
-    return userNames
     // Map does something for each element, array same length before, data is different
     // Output
     // ['Semih']
+
+    return ids
+        .filter(id => users.find(user => user.id === id) !== undefined)
+        .map(id => users.find(user => user.id === id).name)
 }
 
 function getExperiencedUserNamesByIds(ids, users, olderThanAge){

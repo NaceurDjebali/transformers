@@ -12,7 +12,7 @@ const users = [
     { id: 38, name: 'Arien', age: 36 },
 ]
 
-test('Get usernames by ids', () => {
+test.only('Get usernames by ids', () => {
     const ids = [1, 2, 7, 38, 42]
     const names = getUserNamesByIds(ids, users)
     expect(names).toEqual(['Semih', 'Laitin', 'Arien'])

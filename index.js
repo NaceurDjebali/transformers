@@ -1,5 +1,6 @@
-function greet(){
-    return 'hi'
+function getUserNamesByIds(ids, users){
+    // your code here
+    return []
 }
 
-module.exports.greet = greet
+module.exports.getUserNamesByIds = getUserNamesByIds
